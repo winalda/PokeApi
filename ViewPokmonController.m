@@ -36,6 +36,12 @@
     self.lblId.text = [NSString stringWithFormat:@"%@",descripcionPokemon[@"id"]];
     self.lblNombre.text = descripcionPokemon[@"name"];
     self.lblBase_Experience.text = [NSString stringWithFormat:@"%@",descripcionPokemon[@"base_experience"]];
+    self.lblHeight.text = [NSString stringWithFormat:@"%@",descripcionPokemon[@"height"]];
+    self.lblWeight.text = [NSString stringWithFormat:@"%@",descripcionPokemon[@"weight"]];
+    
+    NSLog(@"*********************************************************************************************");
+    NSLog(@"abilities %@",descripcionPokemon[@"abilities"]);
+    NSLog(@"*********************************************************************************************");
 }
 
 - (void)didReceiveMemoryWarning {

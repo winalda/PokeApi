@@ -11,6 +11,7 @@
 @implementation TableViewCell
 
 @synthesize lblNombre = _lblNombre;
+@synthesize lblID = _lblID;
 
 - (void)awakeFromNib {
     [super awakeFromNib];

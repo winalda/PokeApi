@@ -15,5 +15,7 @@
 @property (nonatomic, strong) IBOutlet UILabel * lblNombre;
 @property (nonatomic, strong) IBOutlet UILabel * lblId;
 @property (nonatomic, strong) IBOutlet UILabel * lblBase_Experience;
+@property (nonatomic, strong) IBOutlet UILabel * lblHeight;
+@property (nonatomic, strong) IBOutlet UILabel * lblWeight;
 
 @end

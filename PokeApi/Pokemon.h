@@ -12,6 +12,7 @@
 
 @property (strong, nonatomic) NSString * nombre;
 @property (strong, nonatomic) NSString * url;
+@property (nonatomic) int ID;
 
--(id) initWithName:(NSString*) Name andStringUrl:(NSString *) Url;
+-(id) initWithName:(NSString*) Name andStringUrl:(NSString *) Url andID:(int) ID;
 @end

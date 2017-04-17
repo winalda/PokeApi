@@ -11,5 +11,6 @@
 @interface TableViewCell : UITableViewCell
 
 @property (strong, nonatomic) IBOutlet UILabel * lblNombre;
+@property (strong, nonatomic) IBOutlet UILabel * lblID;
 
 @end

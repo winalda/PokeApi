@@ -17,6 +17,8 @@
 {
     NSMutableArray <Pokemon *> *pokemon;
     NSMutableArray * pokemones;
+    UISearchController * searchController;
+    NSArray <Pokemon *> *searchResults;
 }
 @end
 
@@ -33,7 +35,6 @@
     [JsonClass fetchFromUrl:url_string withDictionary:^(NSDictionary *data) {
         
         pokemones = data[@"results"];
-        NSLog(@"%lu",[pokemones count]);
         
     }];
     
@@ -43,9 +44,16 @@
     
     for(int i=0;i<[pokemones count];i++){
         aux = [pokemones objectAtIndex:i];
-        NSLog(@" aux ********* %@",aux);
-        [pokemon addObject:[[Pokemon alloc]initWithName:aux[@"name"] andStringUrl:aux[@"url"]]];
+        [pokemon addObject:[[Pokemon alloc]initWithName:aux[@"name"] andStringUrl:aux[@"url"] andID:i+1]];
     }
+    
+    searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
+    [searchController.searchBar sizeToFit];
+    self.tableView.tableHeaderView = searchController.searchBar;
+    self.definesPresentationContext = YES;
+    
+    searchController.searchResultsUpdater = self;
+    searchController.dimsBackgroundDuringPresentation = NO;
 }
 
 
@@ -58,7 +66,11 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [pokemones count];
+    if(searchController.active)
+    {
+        return [searchResults count];
+    }else
+        return [pokemones count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -73,8 +85,15 @@
         cell = [nib objectAtIndex:0];
     }
     
-    cell.lblNombre.text = [pokemon objectAtIndex:indexPath.row].nombre;
-    
+    if(searchController.active)
+    {
+        cell.lblNombre.text = [searchResults objectAtIndex:indexPath.row].nombre;
+        cell.lblID.text = [NSString stringWithFormat:@"%i",[searchResults objectAtIndex:indexPath.row].ID];
+    }else
+    {
+        cell.lblNombre.text = [pokemon objectAtIndex:indexPath.row].nombre;
+        cell.lblID.text = [NSString stringWithFormat:@"%i",[pokemon objectAtIndex:indexPath.row].ID];
+    }
     return cell;
 }
 
@@ -82,10 +101,31 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"Seleccionaste %lu",indexPath.row);
     ViewPokmonController * viewPokemon = [[ViewPokmonController alloc] initWithNibName:@"ViewPokmonController" bundle:[NSBundle mainBundle]];
-    viewPokemon.stringURl = [pokemon objectAtIndex:indexPath.row].url;
+    if(searchController.active)
+    {
+        viewPokemon.stringURl = [searchResults objectAtIndex:indexPath.row].url;
+    }else
+        viewPokemon.stringURl = [pokemon objectAtIndex:indexPath.row].url;
+    
     [self.navigationController pushViewController:viewPokemon animated:YES];
 }
 
+#pragma mark -Metodos de UISearchController
+
+-(void)filterContexForSearchResults:(NSString *) searchText
+{
+    NSPredicate * predicate = [NSPredicate predicateWithFormat:@"nombre contains[c]%@",searchText];
+    
+    if(searchText.length > 0)
+        searchResults = [pokemon filteredArrayUsingPredicate:predicate];
+    else
+        searchResults = pokemon;
+}
+
+-(void)updateSearchResultsForSearchController:(UISearchController *)theSearchController
+{
+    [self filterContexForSearchResults:theSearchController.searchBar.text];
+    [self.tableView reloadData];
+}
 @end

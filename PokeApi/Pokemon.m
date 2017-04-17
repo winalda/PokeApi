@@ -12,12 +12,14 @@
 
 @synthesize nombre = _nombre;
 @synthesize url = _url;
+@synthesize ID = _ID;
 
--(id) initWithName:(NSString*) Name andStringUrl:(NSString *) Url{
+-(id) initWithName:(NSString*) Name andStringUrl:(NSString *) Url andID:(int)ID{
 
     if(self = [super init]){
         _nombre = Name;
         _url = Url;
+        _ID = ID;
     }
     
     return self;
