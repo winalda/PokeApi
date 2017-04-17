@@ -11,8 +11,7 @@
 @interface Pokemon : NSObject
 
 @property (strong, nonatomic) NSString * nombre;
-@property (nonatomic) NSInteger * id;
+@property (strong, nonatomic) NSString * url;
 
--(id) initWithName:(NSString*) Name andId:(NSInteger*) ID;
-
+-(id) initWithName:(NSString*) Name andStringUrl:(NSString *) Url;
 @end

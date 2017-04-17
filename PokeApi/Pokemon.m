@@ -11,11 +11,13 @@
 @implementation Pokemon
 
 @synthesize nombre = _nombre;
+@synthesize url = _url;
 
--(id) initWithName:(NSString*) Name andId:(NSInteger *)ID{
+-(id) initWithName:(NSString*) Name andStringUrl:(NSString *) Url{
 
     if(self = [super init]){
         _nombre = Name;
+        _url = Url;
     }
     
     return self;

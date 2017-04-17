@@ -17,6 +17,8 @@
 		A7D96E111E9BDBCD00EF4907 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7D96E0F1E9BDBCD00EF4907 /* TableViewCell.xib */; };
 		A7D96E161E9BE6AF00EF4907 /* JsonClass.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D96E151E9BE6AF00EF4907 /* JsonClass.m */; };
 		A7D96E191E9BF07C00EF4907 /* Pokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D96E181E9BF07C00EF4907 /* Pokemon.m */; };
+		CCFF27111EA3FAEB000CEA88 /* ViewPokmonController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFF270F1EA3FAEB000CEA88 /* ViewPokmonController.m */; };
+		CCFF27121EA3FAEB000CEA88 /* ViewPokmonController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCFF27101EA3FAEB000CEA88 /* ViewPokmonController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,9 @@
 		A7D96E151E9BE6AF00EF4907 /* JsonClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonClass.m; sourceTree = "<group>"; };
 		A7D96E171E9BF07C00EF4907 /* Pokemon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pokemon.h; sourceTree = "<group>"; };
 		A7D96E181E9BF07C00EF4907 /* Pokemon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pokemon.m; sourceTree = "<group>"; };
+		CCFF270E1EA3FAEB000CEA88 /* ViewPokmonController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewPokmonController.h; sourceTree = "<group>"; };
+		CCFF270F1EA3FAEB000CEA88 /* ViewPokmonController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewPokmonController.m; sourceTree = "<group>"; };
+		CCFF27101EA3FAEB000CEA88 /* ViewPokmonController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewPokmonController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +112,9 @@
 				A7D96E0D1E9BDBCD00EF4907 /* TableViewCell.h */,
 				A7D96E0E1E9BDBCD00EF4907 /* TableViewCell.m */,
 				A7D96E0F1E9BDBCD00EF4907 /* TableViewCell.xib */,
+				CCFF270E1EA3FAEB000CEA88 /* ViewPokmonController.h */,
+				CCFF270F1EA3FAEB000CEA88 /* ViewPokmonController.m */,
+				CCFF27101EA3FAEB000CEA88 /* ViewPokmonController.xib */,
 			);
 			name = ViewController;
 			path = ..;
@@ -181,6 +189,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCFF27121EA3FAEB000CEA88 /* ViewPokmonController.xib in Resources */,
 				A7D96E031E9BCDAD00EF4907 /* LaunchScreen.storyboard in Resources */,
 				A7D96E111E9BDBCD00EF4907 /* TableViewCell.xib in Resources */,
 				A7D96E0C1E9BD30A00EF4907 /* ViewController.xib in Resources */,
@@ -195,6 +204,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCFF27111EA3FAEB000CEA88 /* ViewPokmonController.m in Sources */,
 				A7D96DFB1E9BCDAD00EF4907 /* ViewController.m in Sources */,
 				A7D96E101E9BDBCD00EF4907 /* TableViewCell.m in Sources */,
 				A7D96E161E9BE6AF00EF4907 /* JsonClass.m in Sources */,
@@ -349,6 +359,7 @@
 				A7D96E091E9BCDAD00EF4907 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

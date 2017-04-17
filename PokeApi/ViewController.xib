@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -20,13 +20,15 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HkM-YQ-BJq">
-                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                <tableView clipsSubviews="YES" contentMode="scaleAspectFit" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HkM-YQ-BJq">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="647" id="DxL-Rq-dfI"/>
+                        <constraint firstAttribute="height" constant="667" id="DxL-Rq-dfI"/>
                         <constraint firstAttribute="width" constant="375" id="L4X-gL-8wJ"/>
                     </constraints>
+                    <color key="separatorColor" red="0.0" green="0.84971788194444442" blue="0.2245822482638889" alpha="1" colorSpace="calibratedRGB"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="eW7-tx-KP7"/>
                         <outlet property="delegate" destination="-1" id="xbg-TF-Vqy"/>
@@ -35,7 +37,7 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="HkM-YQ-BJq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="GQx-1B-XyU"/>
+                <constraint firstItem="HkM-YQ-BJq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="GQx-1B-XyU"/>
                 <constraint firstAttribute="trailing" secondItem="HkM-YQ-BJq" secondAttribute="trailing" id="QXx-gh-vp7"/>
                 <constraint firstAttribute="bottom" secondItem="HkM-YQ-BJq" secondAttribute="bottom" id="pbJ-DX-geD"/>
                 <constraint firstItem="HkM-YQ-BJq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="yY5-Lj-Clq"/>
